@@ -37,8 +37,8 @@ def write_to_csv(employee_id, username, employee_data):
     with open(filename, 'w', newline='') as csvfile:
         writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
         for task in employee_data:
-            writer.writerow([employee_id, username, \
-                task['completed'], task['title']])
+            writer.writerow([employee_id, username,
+                             task['completed'], task['title']])
 
 
 if __name__ == "__main__":
