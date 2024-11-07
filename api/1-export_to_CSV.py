@@ -9,7 +9,8 @@ import requests
 
 def fetch_employee_data(employee_id):
     """Fetches employee data from the API, including username."""
-    todos_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos"
+    todos_url = \
+        f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos"
     user_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
 
     todos_response = requests.get(todos_url)
@@ -20,10 +21,12 @@ def fetch_employee_data(employee_id):
 
 def display_progress(employee_data):
     """Displays the employee's TODO list progress."""
-    completed_tasks = [task['title'] for task in employee_data if task['completed']]
+    completed_tasks = \
+        [task['title'] for task in employee_data if task['completed']]
     total_tasks = len(employee_data)
     employee_name = employee_data[0].get('username')
-    print(f"Employee {employee_name} is done with tasks({len(completed_tasks)}/{total_tasks}):")
+    print(f"Employee {employee_name} is done with tasks\
+        ({len(completed_tasks)}/{total_tasks}):")
     for task in completed_tasks:
         print(f"\t {task}")
 
@@ -34,7 +37,8 @@ def write_to_csv(employee_id, username, employee_data):
     with open(filename, 'w', newline='') as csvfile:
         writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
         for task in employee_data:
-            writer.writerow([employee_id, username, task['completed'], task['title']])
+            writer.writerow([employee_id, username, \
+                task['completed'], task['title']])
 
 
 if __name__ == "__main__":
