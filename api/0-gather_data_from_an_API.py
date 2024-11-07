@@ -2,8 +2,8 @@
 """
 This script fetches and displays employee TODO list progress from an API.
 """
-import sys
 import requests
+import sys
 
 
 def fetch_employee_data(employee_id):
