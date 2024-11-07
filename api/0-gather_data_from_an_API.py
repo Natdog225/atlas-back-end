@@ -15,10 +15,12 @@ def fetch_employee_data(employee_id):
 
 def display_progress(employee_data):
     """Displays the employee's TODO list progress."""
-    completed_tasks = [task['title'] for task in employee_data if task['completed']]
+    completed_tasks = [task['title']
+                       for task in employee_data if task['completed']]
     total_tasks = len(employee_data)
-    employee_name = employee_data[0].get('username')  # Using get to avoid KeyError
-    print(f"Employee {employee_name} is done with tasks({len(completed_tasks)}/{total_tasks}):")
+    employee_name = employee_data[0].get('username')
+    print(f"Employee {employee_name} is done with tasks
+          ({len(completed_tasks)}/{total_tasks}):")
     for task in completed_tasks:
         print(f"\t {task}")
 
