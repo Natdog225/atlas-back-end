@@ -49,4 +49,4 @@ if __name__ == "__main__":
         sys.exit(1)
 
     employee_data = fetch_employee_data(employee_id)
-    display_progress(employee_data)
+    display_progress(employee_id, employee_data)
