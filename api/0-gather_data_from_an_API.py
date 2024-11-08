@@ -20,8 +20,8 @@ def display_progress(employee_data):
         task in employee_data if task['completed']]
     total_tasks = len(employee_data)
     employee_name = employee_data[0].get('username')
-    print(f"Employee {employee_name}\
-          is done with tasks({len(completed_tasks)}/{total_tasks}):")
+    print(f"Employee {employee_name}
+            is done with tasks({len(completed_tasks)}/{total_tasks}):")
     for task in completed_tasks:
         print(f"\t {task}")
 
