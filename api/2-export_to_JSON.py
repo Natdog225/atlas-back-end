@@ -48,6 +48,6 @@ if __name__ == "__main__":
         try:
             employee_id = int(sys.argv[1])
             employee_data = fetch_employee_data(employee_id)
-            write_to_csv(employee_id, employee_data)
+            write_to_json(employee_id, employee_data)
         except ValueError:
             print("Employee ID must be an integer.")
