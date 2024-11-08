@@ -30,7 +30,8 @@ def write_to_csv(employee_id, employee_data):
 
         for task in employee_data:
             writer.writerow(
-                [employee_id, username, task.get("completed"), task.get("title")]
+                [employee_id, username, task.get("completed"),
+                 task.get("title")]
             )
 
 
